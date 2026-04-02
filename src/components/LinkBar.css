@@ -1,0 +1,45 @@
+.link-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  padding: 24px 0 0;
+  z-index: 100;
+  font-family: var(--font-screen);
+  font-size: 16px;
+  color: var(--color-neutral-60);
+  text-transform: uppercase;
+  letter-spacing: -0.48px;
+}
+
+.link-bar__left,
+.link-bar__right {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.link-bar__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.link-bar__icon {
+  width: 12px;
+  height: 12px;
+  background: var(--color-neutral-60);
+  flex-shrink: 0;
+}
+
+.link-bar__address {
+  white-space: nowrap;
+}
+
+.link-bar__email {
+  white-space: nowrap;
+}
