@@ -48,7 +48,7 @@ export default function CubeBackground({ isExpanded }) {
       <Canvas
         orthographic
         camera={{ position: [0, 0, 1000], zoom: 1, near: 0.1, far: 3000 }}
-        gl={{ antialias: true, alpha: true }}
+        gl={{ antialias: true, alpha: true, toneMapping: 0 }}
         style={{ background: 'transparent' }}
       >
         <Cube isExpanded={isExpanded} />
