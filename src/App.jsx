@@ -3,7 +3,7 @@ import LinkBar from './components/LinkBar';
 import PageItem from './components/PageItem';
 import DetailPanel from './components/DetailPanel';
 import CubeBackground from './components/CubeBackground';
-import MeisterLogo from './assets/svg/meister-logo.svg?react';
+import RiveLogo from './components/RiveLogo';
 import './App.css';
 
 const ITEMS = [
@@ -55,8 +55,7 @@ function App() {
           <CubeBackground />
 
           <div className="logo-container">
-            {/* Placeholder for Rive canvas — replace later */}
-            <MeisterLogo className="logo" />
+            <RiveLogo />
           </div>
 
           <div className="headline-container">

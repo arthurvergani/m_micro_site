@@ -6,4 +6,5 @@ import svgr from 'vite-plugin-svgr'
 export default defineConfig({
   base: '/m_micro_site/',
   plugins: [svgr(), react()],
+  assetsInclude: ['**/*.riv'],
 })
