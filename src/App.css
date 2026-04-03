@@ -35,8 +35,15 @@
 
 .cube-background {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* bottom is set via inline style from menuHeight */
   z-index: 0;
+  pointer-events: none;
+}
+
+.cube-background canvas {
   pointer-events: auto;
 }
 
@@ -51,9 +58,14 @@
   background: radial-gradient(circle, #FF3C2B 0%, transparent 70%);
   filter: blur(40px);
   pointer-events: none;
+  transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.main-view__content > *:not(.cube-background) {
+.cube-background__glow--expanded {
+  left: 25%;
+}
+
+.main-view__content > * {
   position: relative;
   z-index: 1;
   pointer-events: auto;

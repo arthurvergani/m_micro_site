@@ -44,6 +44,7 @@ function App() {
 
   return (
     <div className={`site ${isExpanded ? 'site--expanded' : ''}`}>
+      <CubeBackground isExpanded={isExpanded} />
       <LinkBar />
 
       <div className="main-view">
@@ -52,8 +53,6 @@ function App() {
           onClick={isExpanded ? handleClose : undefined}
           style={isExpanded ? { cursor: 'pointer' } : undefined}
         >
-          <CubeBackground />
-
           <div className="logo-container">
             <RiveLogo />
           </div>
