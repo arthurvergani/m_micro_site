@@ -4,6 +4,14 @@
   flex-direction: column;
   cursor: pointer;
   min-width: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-item--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .page-item__title {
@@ -53,4 +61,10 @@
 
 .page-item--selected .page-item__overlay {
   opacity: 0;
+}
+
+.page-item__pixel-trail {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
 }

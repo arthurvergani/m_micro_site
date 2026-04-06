@@ -28,6 +28,7 @@
   --color-white: #ffffff;
   --color-neutral-60: #a8a8a8;
   --color-logo: var(--color-red);
+  --color-pixel-trail: var(--color-red);
 
   --font-ultra: 'Meister Ultra', sans-serif;
   --font-screen: 'Meister Screen', sans-serif;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import LinkBar from './components/LinkBar';
 import PageItem from './components/PageItem';
 import DetailPanel from './components/DetailPanel';
@@ -31,6 +31,15 @@ const ITEMS = [
 
 function App() {
   const [selectedMonth, setSelectedMonth] = useState(null);
+  const [revealStart, setRevealStart] = useState(false);
+  const loadedCount = useRef(0);
+
+  const handleThumbnailLoad = useCallback(() => {
+    loadedCount.current += 1;
+    if (loadedCount.current >= ITEMS.length) {
+      setRevealStart(true);
+    }
+  }, []);
 
   const isExpanded = selectedMonth !== null;
 
@@ -68,13 +77,15 @@ function App() {
         </div>
 
         <div className="menu-container">
-          {ITEMS.map(({ month, thumbnail }) => (
+          {ITEMS.map(({ month, thumbnail }, index) => (
             <PageItem
               key={month}
+              revealDelay={revealStart ? index * 80 : null}
               month={month}
               thumbnail={thumbnail}
               isSelected={selectedMonth === month}
               onClick={() => handleItemClick(month)}
+              onThumbnailLoad={handleThumbnailLoad}
             />
           ))}
         </div>

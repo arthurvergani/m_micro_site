@@ -1,0 +1,19 @@
+.pixel-trail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+.pixel-trail__row {
+  display: flex;
+}
+
+.pixel-trail__dot {
+  flex-shrink: 0;
+}
+
+.pixel-trail__dot--red {
+  background-color: var(--color-pixel-trail);
+}
