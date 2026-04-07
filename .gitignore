@@ -26,3 +26,6 @@ dist-ssr
 # Environment variables
 .env
 .env.local
+
+# Internal planning docs
+PLAN_PRESENTATION_TOOL.md
