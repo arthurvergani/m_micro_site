@@ -16,9 +16,7 @@ function hexToRiveColor(hex) {
   return ((0xff << 24) | (r << 16) | (g << 8) | b) >>> 0;
 }
 
-const RIVE_RED = hexToRiveColor('#FF3C2B');
-
-export default function RiveLogo() {
+export default function RiveLogo({ accentColor = '#FF3C2B' }) {
   const { rive, RiveComponent } = useRive(
     {
       src: riveFile,
@@ -31,12 +29,11 @@ export default function RiveLogo() {
 
   const { setValue } = useViewModelInstanceColor('colour', rive?.viewModelInstance);
 
-  // Set colour to our red (#FF3C2B) once the setter is available
   useEffect(() => {
     if (setValue) {
-      setValue(RIVE_RED);
+      setValue(hexToRiveColor(accentColor));
     }
-  }, [setValue]);
+  }, [setValue, accentColor]);
 
   return <RiveComponent className="logo" />;
 }

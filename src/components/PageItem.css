@@ -21,7 +21,12 @@
   text-transform: uppercase;
   letter-spacing: -0.72px;
   line-height: 0.8;
-  color: var(--color-red);
+  color: var(--color-accent);
+  transition: opacity 0.3s ease;
+}
+
+.page-item:hover .page-item__title {
+  color: color-mix(in srgb, var(--color-accent) 70%, #FFFFFF 20%);
 }
 
 .page-item--selected .page-item__title {
@@ -31,7 +36,7 @@
 .page-item__thumbnail {
   position: relative;
   height: 288px;
-  border: 1px solid var(--color-red);
+  border: 1px solid var(--color-accent);
   overflow: hidden;
 }
 
@@ -53,13 +58,14 @@
 .page-item__overlay {
   position: absolute;
   inset: 0;
-  background: var(--color-red);
+  background: var(--color-accent);
   mix-blend-mode: color;
   z-index: 2;
   transition: opacity 0.3s ease;
 }
 
-.page-item--selected .page-item__overlay {
+.page-item--selected .page-item__overlay,
+.page-item--highlighted .page-item__overlay {
   opacity: 0;
 }
 

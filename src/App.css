@@ -55,7 +55,7 @@
   width: 75vh;
   height: 75vh;
   border-radius: 50%;
-  background: radial-gradient(circle, #FF3C2B 0%, transparent 70%);
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
   filter: blur(40px);
   pointer-events: none;
   transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -91,7 +91,7 @@
   width: 100%;
   font-family: var(--font-ultra);
   font-size: 60px;
-  color: var(--color-red);
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: -1.8px;
   line-height: 0.92;

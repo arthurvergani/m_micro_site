@@ -15,5 +15,5 @@
 }
 
 .pixel-trail__dot--red {
-  background-color: var(--color-pixel-trail);
+  background-color: var(--color-accent);
 }

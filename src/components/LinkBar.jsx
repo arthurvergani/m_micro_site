@@ -11,11 +11,11 @@ export default function LinkBar() {
         <span className="link-bar__address">110 SE 8th Ave, Portland, OR 97214</span>
       </div>
       <div className="link-bar__right">
-        <a className="link-bar__item" href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <a className="link-bar__item" href="https://www.instagram.com/meister_hq" target="_blank" rel="noopener noreferrer">
           <span className="link-bar__icon" />
           <span>Instagram</span>
         </a>
-        <a className="link-bar__item" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <a className="link-bar__item" href="https://www.linkedin.com/company/meister-studios/" target="_blank" rel="noopener noreferrer">
           <span className="link-bar__icon" />
           <span>Linkedin</span>
         </a>

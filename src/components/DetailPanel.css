@@ -4,9 +4,10 @@
   right: 0;
   width: 50vw;
   height: 100%;
-  background: var(--color-red);
+  background: var(--color-accent);
   transform: translateX(100%);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 20;
   overflow: hidden;
 }
@@ -29,14 +30,8 @@
   display: block;
   width: 100%;
   height: auto;
+  color: var(--color-detail-text);
 }
-
-/* Per-month colors — update these to customise individually */
-.detail-panel__month--may       { color: var(--color-white); }
-.detail-panel__month--june      { color: var(--color-white); }
-.detail-panel__month--july      { color: var(--color-white); }
-.detail-panel__month--august    { color: var(--color-white); }
-.detail-panel__month--september { color: var(--color-white); }
 
 .detail-panel__body {
   display: flex;
@@ -46,7 +41,7 @@
   font-family: var(--font-screen);
   font-size: 16px;
   line-height: 1.35;
-  color: var(--color-white);
+  color: var(--color-detail-text);
 }
 
 .detail-panel__body p {
@@ -60,11 +55,13 @@
   overflow: hidden;
 }
 
-.detail-panel__media-placeholder {
+.detail-panel__video {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #1a1a1a 0%, #333 50%, #1a1a1a 100%);
+  object-fit: cover;
+  display: block;
 }
+
 
 .detail-panel__canvas {
   width: 100%;

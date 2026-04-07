@@ -2,7 +2,7 @@ import { useRef, useState, useCallback, useEffect, useId } from 'react';
 import PixelTrail from './PixelTrail';
 import './PageItem.css';
 
-export default function PageItem({ revealDelay, month, thumbnail, isSelected, onClick, onThumbnailLoad }) {
+export default function PageItem({ revealDelay, month, thumbnail, isSelected, isHighlighted, titleOpacity, onClick, onThumbnailLoad }) {
   const videoRef = useRef(null);
   const imgRef = useRef(null);
   const thumbnailRef = useRef(null);
@@ -13,6 +13,7 @@ export default function PageItem({ revealDelay, month, thumbnail, isSelected, on
   const filterId = useId().replace(/:/g, '');
   const [pixelated, setPixelated] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     return () => {
@@ -65,19 +66,23 @@ export default function PageItem({ revealDelay, month, thumbnail, isSelected, on
   }, []);
 
   const handleMouseEnter = () => {
+    setHovered(true);
     videoRef.current?.play();
     animatePixelation(true);
   };
 
   const handleMouseLeave = () => {
+    setHovered(false);
     videoRef.current?.pause();
     animatePixelation(false);
   };
 
   return (
     <div
-      className={`page-item ${isSelected ? 'page-item--selected' : ''} ${visible ? 'page-item--visible' : ''}`}
+      className={`page-item ${isSelected ? 'page-item--selected' : ''} ${isHighlighted ? 'page-item--highlighted' : ''} ${visible ? 'page-item--visible' : ''}`}
       onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       <svg width="0" height="0" style={{ position: 'absolute' }}>
         <filter id={filterId} x="0" y="0" width="100%" height="100%">
@@ -89,7 +94,7 @@ export default function PageItem({ revealDelay, month, thumbnail, isSelected, on
         </filter>
       </svg>
 
-      <div className="page-item__title">
+      <div className="page-item__title" style={{ opacity: hovered ? 1 : titleOpacity }}>
         <span>{month}</span>
       </div>
       <div

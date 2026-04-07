@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import MaySvg from '../assets/svg/01-May.svg?react';
 import JuneSvg from '../assets/svg/02-June.svg?react';
 import JulySvg from '../assets/svg/03-July.svg?react';
@@ -14,6 +15,7 @@ const MONTH_SVGS = {
 };
 
 export default function DetailPanel({ month, isOpen }) {
+  const videoRef = useRef(null);
   const MonthSvg = MONTH_SVGS[month];
 
   return (
@@ -39,8 +41,17 @@ export default function DetailPanel({ month, isOpen }) {
         </div>
 
         <div className="detail-panel__media">
-          {/* Replace with actual video/image content */}
-          <div className="detail-panel__media-placeholder" />
+          <video
+            ref={videoRef}
+            className="detail-panel__video"
+            src="https://meister.tv/api/media/file/MEISTER_brandfilm.webm"
+            autoPlay
+            loop
+            muted
+            playsInline
+            onMouseEnter={() => { videoRef.current.controls = true; }}
+            onMouseLeave={() => { videoRef.current.controls = false; }}
+          />
         </div>
 
         <div className="detail-panel__canvas">
