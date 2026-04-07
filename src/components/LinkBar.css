@@ -27,6 +27,16 @@
   align-items: center;
   gap: 8px;
   white-space: nowrap;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.1s ease;
+}
+
+.link-bar__item:hover {
+  background-size: 100% 1px;
 }
 
 .link-bar__icon {
@@ -42,6 +52,11 @@
 
 .link-bar__email {
   white-space: nowrap;
+  background-image: none;
+}
+
+.link-bar__email:hover {
+  background-size: 0% 1px;
 }
 
 .site--expanded .link-bar__right {

@@ -19,7 +19,7 @@ export default function LinkBar() {
           <span className="link-bar__icon" />
           <span>Linkedin</span>
         </a>
-        <a className="link-bar__item link-bar__email" href="mailto:info@meister.tv">
+        <a className="link-bar__item link-bar__email">
           info@meister.tv
         </a>
       </div>
